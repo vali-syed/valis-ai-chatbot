@@ -5,19 +5,29 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
     if (!input.trim()) return;
 
     setMessages([...messages, { role: "user", text: input }]);
     setInput("");
 
-    // Fake AI reply for now
-    setTimeout(() => {
+    const response = await fetch("http://localhost:5000/chat", {
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        message:input
+      })
+    })
+    const data = await response.json();
+    console.log(data);//checking reply from server
+    const reply = data.reply;
+   
       setMessages((prev) => [
         ...prev,
-        { role: "ai", text: "Hi! I am your AI chatbot 🤖" },
+        { role: "ai", text: reply },
       ]);
-    }, 500);
   };
 
   return (
