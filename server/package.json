@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "start": "node index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,8 @@
   "dependencies": {
     "@langchain/google-genai": "^2.1.7",
     "cors": "^2.8.5",
-    "espress": "^0.0.0"
+    "dotenv": "^17.2.3",
+    "espress": "^0.0.0",
+    "express": "^4.22.1"
   }
 }
-
