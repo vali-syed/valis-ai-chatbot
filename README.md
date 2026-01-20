@@ -1,6 +1,6 @@
 Hii iam vali and this is "Valis AI Chatbot"
 
-This is my first full-stack AI chatbot project.
+This is my first AI chatbot project.
 
 I built this project to learn how a frontend and backend talk to each other
 and how to connect an AI model using an API.
@@ -25,7 +25,7 @@ The chatbot takes a user message and gives an AI-generated reply,just a simple a
 - Google Gemini API
 
 ---
-
+gt
 ## What I learned from this project
 
 - How frontend and backend communicate

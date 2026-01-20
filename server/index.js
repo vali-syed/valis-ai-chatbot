@@ -7,13 +7,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"],
-  })
-);
+app.use(cors());
 
 
 const model =  new ChatGoogleGenerativeAI({
@@ -28,6 +22,8 @@ app.post("/chat", async (req, res) => {
     res.json({reply:reply.content});
 });
 
-app.listen(5000, () => {
-    console.log("App listening successfully on port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, (req,res) => {
+    console.log("Server running successfully on port " + PORT);
 });
