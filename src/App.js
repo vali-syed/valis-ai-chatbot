@@ -11,7 +11,7 @@ function App() {
     setMessages([...messages, { role: "user", text: input }]);
     setInput("");
 
-    const response = await fetch("http://localhost:5000/chat", {
+    const response = await fetch("https://valis-ai-chatbot.onrender.com/chat", {
       method: "POST",
       headers:{
         "Content-Type":"application/json"
